@@ -4,6 +4,8 @@ require("dotenv").config(); // for creating env var and keep it from public
 
 const express = require("express")
 const morgan = require("morgan")
+const db = require("./db")
+
 const app = express()
 
 // middleware
@@ -11,23 +13,34 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 // get all restaurants
-app.get("/api/v1/restaurants", (req, res) => {
-    res.status(200).json({
-        status: "success",
-        data: {
-            restaurant: ["mcdonalds", "wendy"],
-        }
-    })
+app.get("/api/v1/restaurants", async (req, res) => {
+    try {
+        const results = await db.query("SELECT * FROM restaurants")
+        res.status(200).json({
+            status: "success",
+            results: results.rows.length,
+            data: {
+                restaurant: results.rows,
+            }
+        })
+    } catch (err) {
+        console.log(err)
+    }
 }) 
 
 // get a restaurant
-app.get("/api/v1/restaurants/:id", (req, res) => {
-    res.status(200).json({
-        status: "success",
-        data: {
-            restaurant: req.body,
-        }
-    })
+app.get("/api/v1/restaurants/:id", async (req, res) => {
+    try {
+        const results = await db.query(`SELECT * FROM restaurants where id = ${req.params.id}`)
+        res.status(200).json({
+            status: "success",
+            data: {
+                restaurant: results.rows[0],
+            }
+        })
+    } catch (err) {
+        console.log(err)
+    }
 })
 
 // create a restaurant
