@@ -32,7 +32,7 @@ CREATE TABLE restaurants (
     price_range INT NOT NULL check(price_range >= 1 and price_range <= 5)   
 );
 
-INSERT INTO restaurants(name, location, price_range) VALUES ('McDonalds', '1993 McKee Rd San Jose, CA 95133', 7 );
+INSERT INTO restaurants(name, location, price_range) VALUES ('McDonalds', '1993 McKee Rd San Jose, CA 95133', 2 );
 
 SELECT * FROM restaurants;
 
