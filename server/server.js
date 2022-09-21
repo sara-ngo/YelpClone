@@ -3,12 +3,14 @@
 require("dotenv").config(); // for creating env var and keep it from public
 
 const express = require("express")
+const cors = require("cors")
 const morgan = require("morgan")
 const db = require("./db")
 
 const app = express()
 
 // middleware
+app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
 
@@ -20,7 +22,7 @@ app.get("/api/v1/restaurants", async (req, res) => {
             status: "success",
             results: results.rows.length,
             data: {
-                restaurant: results.rows,
+                restaurants: results.rows,
             }
         })
     } catch (err) {
@@ -60,7 +62,7 @@ app.post("/api/v1/restaurants", async (req, res) => {
     }
 })
 
-// update restaurants
+// update a restaurant
 app.put("/api/v1/restaurants/:id", async (req, res) => {
     try {
         const results = await db.query("UPDATE restaurants SET name = $1, location = $2, price_range = $3 where id = $4 returning *",
