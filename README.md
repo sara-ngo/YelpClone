@@ -1,4 +1,5 @@
 # Restaurants Book
+This project is built for educational purposes. 
 
 ## About 
 
