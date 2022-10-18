@@ -4,7 +4,8 @@ export const RestaurantsContext = createContext()
 
 export const RestaurantsContextProvider = props => {
     /* store array of restaurants */
-    const [restaurants, setRestaurants] = useState([]) 
+    const [restaurants, setRestaurants] = useState([])
+    const [selectedRestaurant, setSelectedRestaurant] = useState(null)
 
     /* pass the new created restaurant and add it to the existed array*/
     const addRestaurants = (restaurant) => {
@@ -12,7 +13,7 @@ export const RestaurantsContextProvider = props => {
     }
 
     return (
-        <RestaurantsContext.Provider value={{ restaurants, setRestaurants, addRestaurants }}>
+        <RestaurantsContext.Provider value={{ restaurants, setRestaurants, addRestaurants, selectedRestaurant, setSelectedRestaurant }}>
             {props.children} {/* pass props */}
         </RestaurantsContext.Provider>
     )
