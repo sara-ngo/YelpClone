@@ -92,9 +92,25 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
     }
 })
 
+app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
+    try {
+        const newReview = await db.query("INSERT INTO reviews (restaurant_id, name, review, rating) VALUES ($1, $2, $3, $4);", 
+        [req.params.id, req.body.name, req.body.review, req.body.rating])
+
+        res.status(201).json({
+            status: "success",
+            data: {
+                review: newReview.rows[0],
+            }
+        })
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 const port = process.env.PORT || 3001 
 app.listen(port, () => {
     console.log(`Server is up and listening on port ${port}`);
 })
 
-// node server.js to run and crtl + c to stop
+// for API testing: node server.js to run and crtl + c to stop
