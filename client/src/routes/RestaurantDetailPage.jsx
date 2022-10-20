@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom'
 import RestaurantFinder from '../apis/RestaurantFinder'
 import AddReview from '../components/AddReview'
 import Reviews from '../components/Reviews'
-import StarRating from '../components/StarRating'
 import { RestaurantsContext } from '../context/RestaurantsContext'
 
 const RestaurantDetailPage = () => {
