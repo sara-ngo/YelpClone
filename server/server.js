@@ -11,7 +11,7 @@ const app = express()
 
 // middleware
 app.use(cors())
-app.use(morgan("dev"))
+app.use(morgan("dev")) // log HTTP requests
 app.use(express.json())
 
 // get all restaurants
