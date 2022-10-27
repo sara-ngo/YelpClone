@@ -10,6 +10,7 @@ const AddRestaurant = () => { /* get user inputs and update accordingly*/
 
     const handleSubmit = async (e) => {
         e.preventDefault() /* prevent reloading the page */
+        console.log("add is hit")
         try {
             const response = await RestaurantFinder.post("/", {
                 name: name,
