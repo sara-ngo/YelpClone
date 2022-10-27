@@ -3,9 +3,9 @@
 ## About 
 This project is built for educational purposes. 
 Reference:
--https://www.youtube.com/watch?v=J01rYl9T3BU&t=9198s
--https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html
--https://getbootstrap.com/docs/5.2/getting-started/introduction/
+- https://www.youtube.com/watch?v=J01rYl9T3BU&t=9198s
+- https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html
+- https://getbootstrap.com/docs/5.2/getting-started/introduction/
 
 ## Feature
 1. Display a list of restaurants with name, location, average rating, number of reviews
@@ -16,13 +16,13 @@ Reference:
 
 ## Tech stack
 ### Front-end
--ReactJS
+- ReactJS
 
 ### Back-end
--PostgreSQL
--ExpressJS
--NodeJS
--AWS RDS for hosting database on cloud
+- PostgreSQL
+- ExpressJS
+- NodeJS
+- AWS RDS for hosting database on cloud
 
 ## Project Setup
 1. Clone this repo
