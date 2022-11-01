@@ -1,4 +1,5 @@
 # Restaurants Book (PERN stack)
+Link: https://grab-a-restaurant.netlify.app/
 
 ## About 
 This project is built for educational purposes. 
@@ -17,12 +18,14 @@ Reference:
 ## Tech stack
 ### Front-end
 - ReactJS
+- Deploy on Netlify
 
 ### Back-end
 - PostgreSQL
 - ExpressJS
 - NodeJS
 - AWS RDS for hosting database on cloud
+- Deploy on Heroku
 
 ## Project Setup
 1. Clone this repo
