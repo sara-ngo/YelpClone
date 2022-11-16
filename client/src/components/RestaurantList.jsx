@@ -55,41 +55,47 @@ const RestaurantList = (props) => {
     }
 
     return (
-        <div className='list-group'>
-            <table className="table table-dark table-hover">
-                <thead>
-                    <tr className='bg-primary'>
-                        <th scope="col">Restaurant</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Price range</th>
-                        <th scope="col">Rating</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* if restaurant exist */}
-                    { restaurants && restaurants.map(restaurant => {
-                        return (
-                            <tr onClick={() => handleRestaurantSelect(restaurant.id)} key={restaurant.id}>
-                                <td>{restaurant.name}</td>
-                                <td>{restaurant.location}</td>
-                                <td>{"$".repeat(restaurant.price_range)}</td>
-                                <td>{renderRating(restaurant)}</td>
-                                <td>
-                                    <button onClick={(e) => handleUpdate(e, restaurant.id)} className='btn btn-warning'>Update</button>
-                                </td>
-                                <td>
-                                    <button onClick={(e) => handleDelete(e, restaurant.id)} className='btn btn-danger'>Delete</button>
-                                </td>
-                            </tr>
-                        )
-                        
-                    })}
-                </tbody>
+        <div className="page_container list-group">
+          <div className="container-fluid upp-styled-table">
+            <table className="styled-table">
+              <thead>
+                <tr className="bg-dark">
+                  <th scope="col">Restaurant</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Price range</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* if restaurant exist */}
+                {restaurants &&
+                  restaurants.map((restaurant) => {
+                    return (
+                      <tr
+                        onClick={() => handleRestaurantSelect(restaurant.id)}
+                        key={restaurant.id}
+                        className="pointer"
+                      >
+                        <td>{restaurant.name}</td>
+                        <td>{restaurant.location}</td>
+                        <td>{"$".repeat(restaurant.price_range)}</td>
+                        <td>{renderRating(restaurant)}</td>
+                        <td>
+                          <button onClick={(e) => handleUpdate(e, restaurant.id)} className='btn btn-warning'>Update</button>
+                        </td>
+                        <td>
+                          <button onClick={(e) => handleDelete(e, restaurant.id)} className='btn btn-danger'>Delete</button>
+                        </td>
+                      </tr>
+                    )
+                  })}
+              </tbody>
             </table>
+          </div>
         </div>
-    )
-}
-
-export default RestaurantList
+      )
+    }
+    
+    export default RestaurantList
