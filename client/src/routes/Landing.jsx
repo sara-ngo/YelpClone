@@ -25,20 +25,20 @@ const Landing = () => {
               <p>
                 The project is made by:
               </p>
-              <p>Sara Ngo - Backend developer
-                <a href="https://linkedin.com/in/sara-ngo" class="social-icon si-rounded si-small si-linkedin">
-                  <i class="icon-linkedin"></i>
+              <p>Sara Ngo - Backend developer 
+                <a href="https://linkedin.com/in/sara-ngo">
+                  [LinkedIn]
                 </a>
                 <a href="https://github.com/sara-ngo">
-                  <i class="fab fa-github" style='font-size:30px'></i>
+                  [Github]
                 </a>
               </p>
-              <p>Mai Tran - Frontend developer
-                <a href="https://linkedin.com/" class="social-icon si-rounded si-small si-linkedin">
-                  <i class="icon-linkedin"></i>
+              <p>Mai Tran - Frontend developer 
+                <a href="https://linkedin.com/">
+                  [LinkedIn]
                 </a>
                 <a href="https://github.com/ntran12">
-                  <i class="fab fa-github" style='font-size:30px'></i>
+                  [Github]
                 </a>
               </p>
             </div>
