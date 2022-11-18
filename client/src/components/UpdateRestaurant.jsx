@@ -29,7 +29,7 @@ const UpdateRestaurant = (props) => {
             price_range: priceRange
         })
         alert('Update successful!')
-        navigation('/')
+        navigation('/home')
     }
 
     return (
